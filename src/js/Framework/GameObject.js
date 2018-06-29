@@ -9,6 +9,7 @@ var Framework = (function (Framework) {
      * 一般而言, 應該不會直接new它, 而是new其他的concrete class
      *
      * @implements Framework.AttachableInterface
+     * @property {Framework.Scene} spriteParent
      * @abstract
      */
     Framework.GameObject = class GameObject {
@@ -23,7 +24,7 @@ var Framework = (function (Framework) {
             this.absoluteRotation = 0;
             this.absoluteScale = 1;
             this.systemLayer = 1;
-            //this.spriteParent = {};
+            this.spriteParent = undefined;
 
             this.previousAbsolutePosition = new Point3D(0, 0, 0);
             this.previousWidth = 0;

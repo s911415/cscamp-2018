@@ -7,6 +7,7 @@ var Framework = (function (Framework) {
      *
      * @interface Framework.AttachableInterface
      * @type {AttachableInterface}
+     * @property {Framework.Scene} spriteParent
      */
     Framework.AttachableInterface = class AttachableInterface {
         /**
