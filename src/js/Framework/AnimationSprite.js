@@ -12,6 +12,8 @@ var Framework = (function (Framework) {
      * 故需要在提供大張連續圖的row和col.
      * options.speed可以設定這個Sprite播放的速度(fps),
      * options.loop 則可以設定這個Sprite是否需要不斷重複播放
+     * @class Framework.AnimationSprite
+     * @extends Framework.GameObject
      * @example
      *     new Framework.AnimationSprite({url:['image1.png', 'image2.bmp']}); //多張圖片
      *     new Framework.AnimationSprite({url:' bigImage.png', col: 10 , row: 7 , loop: true , speed: 6}); //只有一張大型的連續動作圖,speed和loop為非必要項

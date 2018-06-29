@@ -3,6 +3,11 @@ var user = (function (user) {
     const getCenterX = (objectWidth) => (Framework.Config.canvasWidth - objectWidth) >> 1;
     const Utils = user.Utils;
 
+    /**
+     * 遊戲進入畫面
+     *
+     * @class user.GameMenu
+     */
     user.GameMenu = class GameMenu extends Framework.Scene {
         load() {
             this.background = new user.Background();

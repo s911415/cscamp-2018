@@ -14,6 +14,12 @@ var user = (function (user) {
     const FALLING_DOWN_SPEED = 1;
     const MAX_ASTEROID_COUNT = 10;
 
+    /**
+     * 主遊戲畫面
+     *
+     * @class user.GameScene
+     * @extends Framework.Scene
+     */
     user.GameScene = class extends Framework.Scene {
         load() {
             this.background = new user.Background();
@@ -66,7 +72,16 @@ var user = (function (user) {
                 this.asteroidCount++;
             }
 
+            /**
+             * 所有子彈
+             * @type {user.Bullet[]}
+             */
             let bullets = this.attachArray.filter(x => x instanceof user.Bullet);
+
+            /**
+             * 所有隕石
+             * @type {user.Asteroid[]}
+             */
             let asteroids = this.attachArray.filter(x => x instanceof user.Asteroid);
 
             let playerRect = this.player.rect;

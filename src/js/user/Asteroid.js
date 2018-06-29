@@ -1,5 +1,11 @@
 "use strict";
 var user = (function (user) {
+    /**
+     * 隕石
+     *
+     * @class user.Asteroid
+     * @extends Framework.Sprite
+     */
     user.Asteroid = class Asteroid extends Framework.Sprite {
         constructor() {
             let size = (Math.random() * 3) | 0;

@@ -2,7 +2,14 @@
 var user = (function (user) {
     const SHOOT_DELAY = 100;
     const HURT_DELAY = 1000;
-    user.Player = class extends Framework.AnimationSprite {
+
+    /**
+     * 玩家
+     *
+     * @class user.Player
+     * @extends Framework.AnimationSprite
+     */
+    user.Player = class Player extends Framework.AnimationSprite {
         constructor() {
             super({
                 url: 'images/ship_2.png',

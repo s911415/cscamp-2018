@@ -2,6 +2,13 @@
 var user = (function (user) {
     const BULLET_WIDTH = 20;
     const BULLET_HEIGHT = 6;
+
+    /**
+     * 子彈
+     *
+     * @class user.Bullet
+     * @extends Framework.GameObject
+     */
     user.Bullet = class Bullet extends Framework.GameObject {
         constructor() {
             super();

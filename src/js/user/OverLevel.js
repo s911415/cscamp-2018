@@ -1,5 +1,11 @@
 "use strict";
 var user = (function (user) {
+    /**
+     * 遊戲結束
+     *
+     * @class user.OverLevel
+     * @extends Framework.Level
+     */
     user.OverLevel = class extends Framework.Level {
         constructor() {
             super();

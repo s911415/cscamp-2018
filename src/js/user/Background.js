@@ -1,5 +1,11 @@
 "use strict";
 var user = (function (user) {
+    /**
+     * 背景
+     *
+     * @class user.Background
+     * @extends Framework.Sprite
+     */
     user.Background = class Background extends Framework.Sprite {
         constructor() {
             super("images/background-1.png");

@@ -1,5 +1,11 @@
 "use strict";
 var user = (function (user) {
+    /**
+     * 遊戲結束畫面
+     *
+     * @class user.GameOverScene
+     * @extends Framework.Scene
+     */
     user.GameOverScene = class GameOverScene extends Framework.Scene {
         constructor() {
             super();
