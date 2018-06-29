@@ -38,8 +38,8 @@ var user = (function (user) {
 
             this.asteroidCount = 0;
             for (let i = 0; i < 3; i++) {
-                Framework.ResourceManager.loadImage(`images/asteroid_brown-${i}.png`);
-                Framework.ResourceManager.loadImage(`images/asteroid_gray-${i}.png`);
+                Framework.ResourceManager.loadImage({url:`images/asteroid_brown-${i}.png`});
+                Framework.ResourceManager.loadImage({url:`images/asteroid_gray-${i}.png`});
             }
 
         }
@@ -153,7 +153,7 @@ var user = (function (user) {
         }
 
         onKeyUp(e) {
-            console.log('Up', e);
+            console.log('Up', e.keyCode);
             let arrowState = getArrowKey(e.keyCode);
 
             if (arrowState !== null)

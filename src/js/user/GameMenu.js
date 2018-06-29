@@ -31,7 +31,6 @@ var user = (function (user) {
             this.playBtnHover.position.y = -362;
 
             this.btnRange = {...this.playBtn.rect};
-            console.log(this.btnRange)
         }
 
         onMouseMove(e) {
