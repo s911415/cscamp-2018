@@ -17,16 +17,6 @@ var user = (function (user) {
             this.rootScene.attach(this.scene);
         }
 
-        update() {
-            super.update();
-            this.scene.update();
-        }
-
-        draw(ctx) {
-            super.draw(ctx);
-            this.scene.draw(ctx);
-        }
-
         keydown(a, b, e) {
             this.scene.onKeyDown(e);
         }
