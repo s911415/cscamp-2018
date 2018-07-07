@@ -53,17 +53,12 @@ var user = (function (user) {
             super.update();
 
             let playerOffsetX = 0, playerOffsetY = 0;
-            if (this.arrowKeyHoldStatus.left) playerOffsetX -= MOVE_SPEED_H;
-            if (this.arrowKeyHoldStatus.right) playerOffsetX += MOVE_SPEED_H;
-            if (this.arrowKeyHoldStatus.up) playerOffsetY -= MOVE_SPEED_V;
-            if (this.arrowKeyHoldStatus.down) playerOffsetY += MOVE_SPEED_V;
-            playerOffsetY += FALLING_DOWN_SPEED;
+            //TODO: 移動玩家
+
 
             this.player.move(playerOffsetX, playerOffsetY);
-
-            if (this.player.position.y >= Framework.Config.canvasHeight - 50) {
-                this.player.hurt(100);
-            }
+            
+            //TODO: 判斷玩家墜落
 
             this.asteroidCount = this.attachArray.filter(x => x instanceof user.Asteroid).length;
 
@@ -87,18 +82,14 @@ var user = (function (user) {
             let playerRect = this.player.rect;
             asteroids.forEach(a => {
                 let asteroidRect = a.rect;
+                //TODO: 判斷隕石被那些子彈打到
                 bullets.forEach(b => {
-                    if (!b.used && Utils.aabb(b.rect, asteroidRect)) {
-                        a.hurt((30 * Math.random()) | 0);
-                        if (a.hp <= 0)
-                            this.score += 10;
-                        b.used = true;
-                        this.detach(b);
-                    }
+
                 });
 
+                //TODO: 判斷隕石有沒有打到玩家
                 if (Utils.aabb(playerRect, asteroidRect)) {
-                    this.player.hurt(5 * (3 - a.size));
+
                 }
             });
 
@@ -118,11 +109,10 @@ var user = (function (user) {
         draw(ctx) {
             super.draw(ctx);
 
+            //TODO: 顯示分數及血量
             ctx.textAlign = 'left';
             ctx.textBaseline = 'top';
-            ctx.fillStyle = '#FFF';
-            ctx.font = '20px Arial';
-            ctx.fillText(`HP: ${this.player.hp.toString().padStart(3, ' ')} / 100; Score: ${this.score}`, 10, 10);
+            // Hint: 用fillStyle, fillText
         }
 
         isGameOver() {
@@ -136,28 +126,20 @@ var user = (function (user) {
             return this.gameOver;
         }
 
-        gameOver() {
-
-        }
-
         onKeyDown(e) {
             console.log('Down', e.keyCode);
             let arrowState = getArrowKey(e.keyCode);
 
-            if (arrowState !== null)
-                this.arrowKeyHoldStatus[arrowState] = true;
+            //TODO: 設定方向鍵 (按下)
 
-            if (e.keyCode === 32) { // Space
-                this.player.shoot();
-            }
+            //TODO: 觸發玩家射擊
         }
 
         onKeyUp(e) {
             console.log('Up', e.keyCode);
             let arrowState = getArrowKey(e.keyCode);
 
-            if (arrowState !== null)
-                this.arrowKeyHoldStatus[arrowState] = false;
+            //TODO: 設定方向鍵 (離開)
         }
 
         teardown() {

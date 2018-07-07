@@ -40,10 +40,7 @@ var user = (function (user) {
         shoot() {
             const now = new Date().getTime();
             if (now - this.lastShootTime > SHOOT_DELAY) {
-                let bullet = new user.Bullet();
-                bullet.position.x = this.position.x + this.width;
-                bullet.position.y = this.position.y + this.height - 25;
-                this.spriteParent.attach(bullet);
+                //TODO: 射擊功能
                 this.audio.play('shoot');
                 this.lastShootTime = now;
             }

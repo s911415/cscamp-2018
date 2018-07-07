@@ -44,9 +44,7 @@ var user = (function (user) {
         }
 
         onMouseUp(e) {
-            if (Utils.pointInRect(e, this.btnRange)) {
-                Framework.Game.goToLevel('main');
-            }
+            //TODO: 進入遊戲, Framework.Game.goToLevel('main');
         }
 
         teardown() {

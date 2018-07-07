@@ -8,13 +8,10 @@ var user = (function (user) {
      */
     user.Asteroid = class Asteroid extends Framework.Sprite {
         constructor() {
-            let size = (Math.random() * 3) | 0;
+            //TODO: 設定隕石大小, 圖片
+            let size = 0; //TODO: 設定隕石大小
+            super("images/asteroid_brown-0.png");  //TODO: 設定隕石圖片
 
-            if (Math.random() > 0.5) {
-                super(`images/asteroid_brown-${size}.png`);
-            } else {
-                super(`images/asteroid_gray-${size}.png`);
-            }
             this.size = size;
 
             this.audio = new Framework.Audio({
@@ -35,17 +32,7 @@ var user = (function (user) {
         }
 
         update() {
-            this.position.x -= this.speed;
-            if (this.spriteParent) {
-                if (this.position.x + this.width < -100) {
-                    this.spriteParent.detach(this);
-                }
-
-                if (this.hp <= 0) {
-                    this.spriteParent.detach(this);
-                    this.audio.play('destroy');
-                }
-            }
+            //TODO: 移動隕石、判斷HP、是否超出界線
         }
 
         hurt(damage) {

@@ -47,7 +47,7 @@ var user = (function (user) {
                 ctx.fillStyle = '#F0F';
             }
 
-            ctx.fillRect(this.position.x, this.position.y, BULLET_WIDTH, BULLET_HEIGHT);
+            //TODO: 繪製子彈
 
             ctx.fillStyle = oldFillColor;
 
